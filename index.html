@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ntqs Digital</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    header .logo {
+      height: 200px; /* adjust size as needed */
+      width: auto;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      display: block;
+    }
+    nav a:hover {
+      background: #4a90e2;
+    }
+    .container {
+      display: flex;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .sidebar {
+      width: 20%;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .content {
+      flex: 1;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .masked-text {
+      font-size: 2rem;
+      font-weight: bold;
+      background: linear-gradient(90deg,#ff6b6b,#ffd166,#6bc4ff,#b18cff,#ff6b6b);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: maskShift 6s linear infinite;
+    }
+    @keyframes maskShift {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
+    }
+    /* rolling words */
+    .roll-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      overflow: hidden;
+      display: inline-block;
+      line-height: 1;
+    }
+    .roll-text .word {
+      display: inline-block;
+      transform-origin: 50% 100%;
+      opacity: 0;
+      transform: translateY(30px) rotateX(20deg);
+      animation: rollIn 3.6s linear infinite;
+    }
+    .roll-text .word:nth-child(1){ animation-delay: 0s; }
+    .roll-text .word:nth-child(2){ animation-delay: 1.2s; }
+    .roll-text .word:nth-child(3){ animation-delay: 2.4s; }
+    @keyframes rollIn {
+      0%   { opacity: 0; transform: translateY(30px) rotateX(20deg); }
+      10%  { opacity: 1; transform: translateY(0) rotateX(0); }
+      33%  { opacity: 1; transform: translateY(0) rotateX(0); }
+      43%  { opacity: 0; transform: translateY(-30px) rotateX(-20deg); }
+      100% { opacity: 0; transform: translateY(-30px) rotateX(-20deg); }
+    }
+    .typewriter {
+      font-family: monospace;
+      display: inline-block;
+      font-size: 1.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .typewriter .txt {
+      display: inline-block;
+      max-width: 0ch;
+      animation: typing 3.6s steps(28,end) infinite alternate;
+    }
+    @keyframes typing {
+      from { max-width: 0ch; }
+      to { max-width: 28ch; }
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="NTQS.mp4.png" alt="NTQS Digital Logo" class="logo">
+    <h1>Ntqs Digital</h1>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#dashboard">About</a>
+    <a href="#about">Contact Us</a>
+  </nav>
+  <div class="container">
+    <div class="sidebar">
+      <h3>Services</h3>
+      <ul>
+        <li>SEO</li>
+        <li>Social Media Marketing</li>
+        <li>Web development & UI/UX</li>
+        <li>Email Marketing</li>
+        <li>E-Commerce Marketing</li>
+        <li>Google & Meta Ads</li>
+        <li>Graphic Design</li>
+      </ul>
+    </div>
+    <div class="content">
+      <h2 class="masked-text">Welcome to the NTQS DIGITAL</h2>
+      <div class="row">
+        <div class="roll-text">
+          <span class="word">Innovate</span>
+          <span class="word">Create</span>
+          <span class="word">Launch</span>
+        </div>
+        <p class="typewriter"><span class="txt">This is a Digital Marketing Company.</span></p>
+      </div>
+      <p>Elevate Your Business with a Leading Digital Marketing Company. Our digital solutions are built to grow your brand.</p>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Ntqs Digital
+  </footer>
+</body>
+</html>
