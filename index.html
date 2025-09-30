@@ -120,14 +120,12 @@
     }
 
     /* ---------- Schitt's Creek Title Animation (added) ---------- */
-    /* Container provides 3D perspective */
     .schitt-wrap {
       perspective: 900px;
       -webkit-perspective: 900px;
       display: inline-block;
     }
 
-    /* The heading (uppercase, spaced like the title) */
     .schitt {
       display: inline-block;
       font-family: "Georgia", serif;
@@ -136,28 +134,30 @@
       letter-spacing: 0.45rem;
       text-transform: uppercase;
       line-height: 1;
-      color: #111;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,0.06),
-        0 6px 20px rgba(0,0,0,0.25);
       transform-style: preserve-3d;
     }
 
-    /* Split into letters, each letter animates with slight delay */
     .schitt span {
       display: inline-block;
-      transform-origin: 50% 100%; /* rotate around bottom */
+      transform-origin: 50% 100%;
       backface-visibility: hidden;
       will-change: transform, opacity;
       animation: schittFlip 2.2s cubic-bezier(.14,1.23,.33,1.16) infinite;
-      /* baseline: each span will get a different delay via nth-child */
       opacity: 0;
     }
 
-    /* small space for the slash or gap between words */
-    .schitt .gap { width: .6rem; display:inline-block; }
+    /* small space between words */
+    .schitt .gap { width: .3rem; display:inline-block; }
 
-    /* Stagger delays for a wave-like entrance */
+    /* Color groups */
+    .schitt .ntqs span {
+      color: orange;
+    }
+    .schitt .digital span {
+      color: #007bff;
+    }
+
+    /* Stagger delays for wave-like entrance */
     .schitt span:nth-child(1){ animation-delay: 0s; }
     .schitt span:nth-child(2){ animation-delay: 0.04s; }
     .schitt span:nth-child(3){ animation-delay: 0.08s; }
@@ -171,12 +171,7 @@
     .schitt span:nth-child(11){ animation-delay: 0.40s; }
     .schitt span:nth-child(12){ animation-delay: 0.44s; }
     .schitt span:nth-child(13){ animation-delay: 0.48s; }
-    .schitt span:nth-child(14){ animation-delay: 0.52s; }
-    .schitt span:nth-child(15){ animation-delay: 0.56s; }
-    .schitt span:nth-child(16){ animation-delay: 0.60s; }
-    /* Add more nth-child rules if your text is longer; delays just increment slightly */
 
-    /* Core keyframes: big rotateX with overshoot/settle */
     @keyframes schittFlip {
       0% {
         transform: rotateX(70deg) translateY(30px);
@@ -197,9 +192,6 @@
         opacity: 1;
       }
     }
-
-    /* Option: slower, single-run version: use this if you don't want infinite repeats */
-    /* .schitt span { animation-iteration-count: 1; animation-fill-mode: both; } */
 
     footer {
       text-align: center;
@@ -241,7 +233,6 @@
       </ul>
     </div>
     <div class="content">
-      <!-- you already had this -->
       <h2 class="masked-text">Welcome to the NTQS DIGITAL</h2>
       <div class="row">
         <div class="roll-text">
@@ -254,21 +245,21 @@
 
       <p>Elevate Your Business with a Leading Digital Marketing Company. Our digital solutions are built to grow your brand.</p>
 
-      <!-- === Schitt's Creek style title added below === -->
+      <!-- Schitt's Creek style title -->
       <section style="margin-top: 1.6rem;">
         <div class="schitt-wrap" aria-hidden="false">
-          <!-- Split the text into spans — spaces replaced by .gap elements -->
-          <!-- Example text: "NTQS DIGITAL" — change to any text you like -->
           <h2 class="schitt" aria-label="NTQS DIGITAL">
-            <!-- Each letter wrapped in a span so CSS can stagger/flip -->
-            <span>N</span><span>T</span><span>Q</span><span>S</span>
+            <!-- NTQS word group -->
+            <span class="ntqs">
+              <span>N</span><span>T</span><span>Q</span><span>S</span>
+            </span>
             <span class="gap"></span>
-            <span>D</span><span>I</span><span>G</span><span>I</span><span>T</span><span>A</span><span>L</span>
+            <!-- DIGITAL word group -->
+            <span class="digital">
+              <span>D</span><span>I</span><span>G</span><span>I</span><span>T</span><span>A</span><span>L</span>
+            </span>
           </h2>
         </div>
-        <p style="margin-top:.6rem; color:#666; font-size:.95rem;">
-          Schitt’s-Creek-style title animation — letters flip in with a 3D overshoot. You can change the text above (wrap each letter in its own &lt;span&gt;), or replace with your company name.
-        </p>
       </section>
 
     </div>
@@ -278,3 +269,4 @@
   </footer>
 </body>
 </html>
+
