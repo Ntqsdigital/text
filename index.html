@@ -10,46 +10,7 @@
       font-family: Arial, sans-serif;
       background: #f7f7f7;
       color: #333;
-    }
-    header {
-      background: #4a90e2;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-    }
-    header .logo {
-      height: 200px; /* adjust size as needed */
-      width: auto;
-    }
-    nav {
-      background: #333;
-      display: flex;
-      justify-content: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 1rem 1.5rem;
-      display: block;
-    }
-    nav a:hover {
-      background: #4a90e2;
-    }
-    .container {
-      display: flex;
-      padding: 2rem;
-      gap: 2rem;
-    }
-    .sidebar {
-      width: 20%;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    
     }
     .content {
       flex: 1;
@@ -59,7 +20,7 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
 
-    /* ---------- existing effects ---------- */
+  
     .masked-text {
       font-size: 2rem;
       font-weight: bold;
@@ -76,7 +37,7 @@
       100% {background-position:0% 50%;}
     }
 
-    /* rolling words */
+
     .roll-text {
       font-size: 1.8rem;
       font-weight: 700;
@@ -118,8 +79,6 @@
       from { max-width: 0ch; }
       to { max-width: 28ch; }
     }
-
-    /* ---------- Schitt's Creek Title Animation (fixed colors) ---------- */
     .schitt-wrap {
       perspective: 900px;
       -webkit-perspective: 900px;
@@ -135,7 +94,6 @@
       text-transform: uppercase;
       line-height: 1;
       transform-style: preserve-3d;
-      /* remove a very heavy title shadow to let colors show */
       text-shadow: 0 4px 10px rgba(0,0,0,0.12);
     }
 
@@ -147,26 +105,18 @@
       animation: schittFlip 2.2s cubic-bezier(.14,1.23,.33,1.16) infinite;
       opacity: 0;
     }
-
-    /* make the inter-word gap smaller */
     .schitt .gap { width: .15rem; display:inline-block; }
 
-    /* Color groups — stronger specificity + !important to ensure they show */
     .schitt .ntqs span {
-      color: #ff7a00 !important; /* orange */
+      color: #ff7a00 !important; 
     }
     .schitt .digital span {
-      color: #007bff !important; /* blue */
+      color: #007bff !important; 
     }
-
-    /* Stagger delays: because groups are nested, we target only the individual letter spans */
-    /* To ensure correct staggering across both groups, we assign delays to letters via a selector that ignores the group wrapper */
     .schitt > .ntqs span:nth-child(1){ animation-delay: 0s; }
     .schitt > .ntqs span:nth-child(2){ animation-delay: 0.04s; }
     .schitt > .ntqs span:nth-child(3){ animation-delay: 0.08s; }
     .schitt > .ntqs span:nth-child(4){ animation-delay: 0.12s; }
-
-    /* start delays for DIGITAL letters continue after NTQS */
     .schitt > .digital span:nth-child(1){ animation-delay: 0.16s; }
     .schitt > .digital span:nth-child(2){ animation-delay: 0.20s; }
     .schitt > .digital span:nth-child(3){ animation-delay: 0.24s; }
@@ -209,35 +159,12 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-
-    /* Optional: ensure color remains after animation ends if you set iteration-count: 1 later */
     .schitt .ntqs span,
     .schitt .digital span { -webkit-font-smoothing: antialiased; }
   </style>
 </head>
 <body>
-  <header>
-    <img src="NTQS.mp4.png" alt="NTQS Digital Logo" class="logo">
-    <h1>Ntqs Digital</h1>
-  </header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#features">Features</a>
-    <a href="#dashboard">About</a>
-    <a href="#about">Contact Us</a>
-  </nav>
-  <div class="container">
-    <div class="sidebar">
-      <h3>Services</h3>
-      <ul>
-        <li>SEO</li>
-        <li>Social Media Marketing</li>
-        <li>Web development & UI/UX</li>
-        <li>Email Marketing</li>
-        <li>E-Commerce Marketing</li>
-        <li>Google & Meta Ads</li>
-        <li>Graphic Design</li>
-      </ul>
+ 
     </div>
     <div class="content">
       <h2 class="masked-text">Welcome to the NTQS DIGITAL</h2>
@@ -251,29 +178,19 @@
       </div>
 
       <p>Elevate Your Business with a Leading Digital Marketing Company. Our digital solutions are built to grow your brand.</p>
-
-      <!-- Schitt's Creek style title -->
       <section style="margin-top: 1.6rem;">
         <div class="schitt-wrap" aria-hidden="false">
           <h2 class="schitt" aria-label="NTQS DIGITAL">
-            <!-- NTQS word group -->
             <span class="ntqs" aria-hidden="true">
               <span>N</span><span>T</span><span>Q</span><span>S</span>
             </span>
             <span class="gap" aria-hidden="true"></span>
-            <!-- DIGITAL word group -->
             <span class="digital" aria-hidden="true">
               <span>D</span><span>I</span><span>G</span><span>I</span><span>T</span><span>A</span><span>L</span>
             </span>
           </h2>
         </div>
       </section>
-
-    </div>
-  </div>
-  <footer>
-    &copy; 2025 Ntqs Digital
-  </footer>
 </body>
 </html>
 
